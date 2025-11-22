@@ -1,0 +1,17 @@
+:root {
+  --color1: #F9F7F7;
+  --color2: #112D4E;
+}
+
+section {
+  padding-top: 5rem;
+}
+
+nav {
+  background-color: var(--color1);
+}
+
+section.hero {
+  background-color: var(--color2);
+  height: 100vh;
+}
