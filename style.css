@@ -1,17 +1,131 @@
 :root {
   --color1: #F9F7F7;
-  --color2: #112D4E;
+  --color2: #DBE2EF;
+  --color3: #3F72AF;
+  --color4: #112D4E;
+}
+
+body {
+  height: 2000px;
 }
 
 section {
   padding-top: 5rem;
 }
 
+/* NAVBAR */
 nav {
   background-color: var(--color1);
 }
 
+/* NAVBAR END */
+
+/* HERO */
 section.hero {
-  background-color: var(--color2);
+  background-color: var(--color4);
   height: 100vh;
 }
+
+section.hero img {
+  width: 600px;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+section.hero img:hover {
+  transform: scale(1.1);
+}
+
+/* HERO END */
+
+/* CONTENT */
+.car-box {
+  background-color: var(--color3);
+  height: 500px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.car-box::before {
+  content: '2025';
+  position: absolute;
+  color: white;
+  font-size: 6em;
+  font-weight: bold;
+  font-style: italic;
+  top: 30px;
+  opacity: 0;
+  left: -100px;
+  transition: all 0.3s ease-in-out;
+}
+
+.car-box:hover::before {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+
+.car-box::after {
+  content: 'F1 Team';
+  position: absolute;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+  top: 380px;
+  right: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.car-box:hover::after {
+  right: 50%;
+  transform: translateX(50%);
+  opacity: 0.5;
+}
+
+.team-name {
+  color: white;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  top: 0;
+}
+
+.car-box:hover .team-name {
+  top: 15px;
+  opacity: 1;
+}
+
+.btn-car-team-details {
+  position: absolute;
+  bottom: 0;
+  left: -100px;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.car-box:hover .btn-car-team-details {
+  left: 0;
+  opacity: 1;
+}
+
+.img-car {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -52%) rotate(-90deg);
+  max-width: 90%;
+  transition: all 0.3s ease-in-out;
+}
+
+.car-box:hover .img-car {
+  top: 55%;
+  transform: translate(-50%, -55%) scale(2);
+}
+
+/* CONTENT END */
