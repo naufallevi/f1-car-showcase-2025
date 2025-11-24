@@ -3,6 +3,8 @@
   --color2: #DBE2EF;
   --color3: #3F72AF;
   --color4: #112D4E;
+  --color5: #3F3D56;
+  --color6: #303846;
 }
 
 body {
@@ -11,6 +13,23 @@ body {
 
 section {
   padding-top: 5rem;
+}
+
+section h2 {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #53629E, #87BAC3);
+  border-radius: 2px;
 }
 
 /* NAVBAR */
@@ -40,11 +59,16 @@ section.hero img:hover {
 
 /* CONTENT */
 .car-box {
-  background-color: var(--color3);
+  background-color: var(--color5);
   height: 500px;
   border-radius: 10px;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
+  transform-style: preserve-3d;
+}
+
+.car-box:hover {
+  z-index: 100;
 }
 
 .car-box::before {
@@ -55,8 +79,8 @@ section.hero img:hover {
   font-weight: bold;
   font-style: italic;
   top: 30px;
+  left: 0;
   opacity: 0;
-  left: -100px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -91,9 +115,11 @@ section.hero img:hover {
   width: 100%;
   text-align: center;
   font-size: 2em;
-  transition: all 0.3s ease-in-out;
   opacity: 0;
   top: 0;
+  transition: all 0.3s ease-in-out;
+  transform: translate3d(0, 0, 20px);
+  z-index: 10;
 }
 
 .car-box:hover .team-name {
@@ -107,6 +133,7 @@ section.hero img:hover {
   left: -100px;
   opacity: 0;
   transition: all 0.3s ease-in-out;
+  z-index: 20;
 }
 
 .car-box:hover .btn-car-team-details {
@@ -119,13 +146,22 @@ section.hero img:hover {
   top: 52%;
   left: 50%;
   transform: translate(-50%, -52%) rotate(-90deg);
-  max-width: 90%;
+  max-width: 400px;
   transition: all 0.3s ease-in-out;
+  z-index: 15;
 }
 
 .car-box:hover .img-car {
+  max-width: 90%;
   top: 55%;
-  transform: translate(-50%, -55%) scale(2);
+  transform: translate3d(-50%, -55%, 100px) scale(1.2);
 }
 
 /* CONTENT END */
+
+/* FOOTER */
+footer {
+  background-color: var(--color6);
+}
+
+/* FOOTER END */
